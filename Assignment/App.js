@@ -4,10 +4,15 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Styles from './styles/Style.js';
+import { useFireLocations } from './firebase/FirestoreController.js';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+  const locations = useFireLocations();
+  console.log(locations);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
