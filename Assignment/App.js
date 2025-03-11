@@ -1,13 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button, Switch } from 'react-native-web';
-import Styles from './styles/Style';
+import { StyleSheet, Text, View, Button, Switch, Pressable } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Styles from './styles/Style.js';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name={'Locations'} component={Locations}></Stack.Screen>
+        <Stack.Screen name={'Maps'} component={Maps}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+function Locations() {
+
+  const navigation = useNavigation();
+
+  return (
     <View style={Styles.container}>
       <Text>Locations</Text>
-      <Button title='Add new location'></Button>
+      <Pressable onPress={() => navigation.navigate('Maps') }>
+        <Text>Add new location</Text>
+      </Pressable>
     </View>
   );
+}
+
+function Maps() {
+  return (
+    <Text>Maps here</Text>
+  )
 }
