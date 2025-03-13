@@ -2,7 +2,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { useFireLocations } from '../firebase/FirestoreController';
 import { StyleSheet, Text, View, Button, Switch, Pressable, FlatList } from 'react-native';
 import Styles from '../styles/Style.js';
-import { IconButton } from 'react-native-paper';
+import { Icon, IconButton } from 'react-native-paper';
 
 export function Locations() {
 
@@ -29,8 +29,14 @@ function Place(locationItem, navigation) {
                 <IconButton size={35} icon={'map-marker'} iconColor={'red'}></IconButton>
             </Pressable>
         </View>
-        <Text>{locationItem.lDescription}</Text>
-        <Text>{locationItem.stars}</Text>
+        <Text style={[Styles.description, {paddingBottom: 10},]}>{locationItem.lDescription}</Text>
+        <View style={Styles.starRow}>
+            <IconButton icon={locationItem.stars >= 1 ? 'star' : 'star-outline'}></IconButton>
+            <IconButton icon={locationItem.stars >= 2 ? 'star' : 'star-outline'}></IconButton>
+            <IconButton icon={locationItem.stars >= 3 ? 'star' : 'star-outline'}></IconButton>
+            <IconButton icon={locationItem.stars >= 4 ? 'star' : 'star-outline'}></IconButton>
+            <IconButton icon={locationItem.stars >= 5 ? 'star' : 'star-outline'}></IconButton>
+        </View>
       </View>
     );
 }

@@ -26,5 +26,17 @@ export default StyleSheet.create({
         padding:15,
         marginBottom:10,
         textAlign:"center"
+    },
+    starRow: {
+        flexDirection: 'row',
+        backgroundColor: '#a8a7a8',
+    },
+    starRowEdit: {
+        flexDirection: 'row',
+        backgroundColor: '#a8a7a8',
+        marginBottom:10
+    },
+    starEmpty: {
+        icon: 'star-outline',
     }
 })

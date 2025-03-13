@@ -1,4 +1,4 @@
-import { addDoc, collection, onSnapshot, query, QuerySnapshot } from "firebase/firestore";
+import { addDoc, collection, onSnapshot, orderBy, query, QuerySnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db, LOCATIONS_REF } from "./config.js";
 
@@ -7,7 +7,7 @@ export function useFireLocations() {
 
     useEffect(()=>{
 
-        const q = query(collection(db, LOCATIONS_REF));
+        const q = query(collection(db, LOCATIONS_REF), orderBy('stars', 'desc'));
 
         onSnapshot(q, querySnapshot => {
             setLocations( querySnapshot.docs.map(doc => {
