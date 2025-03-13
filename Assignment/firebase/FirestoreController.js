@@ -20,25 +20,7 @@ export function useFireLocations() {
     return locations;
 }
 
-export function addLocation(lName) {
-    addDoc( collection(db, LOCATIONS_REF), {done: false, lName} )
+export function addPlace(lName, lDescription, stars) {
+    addDoc( collection(db, LOCATIONS_REF), {lName, lDescription, stars} )
         .catch(error => console.log(error.message))
-}
-
-export function getLocationName() {
-    const [name, setName] = useState([]);
-
-    useEffect(()=>{
-
-        const q = query(collection(db, LOCATIONS_REF));
-
-        onSnapshot(q, querySnapshot => {
-            setLocations( querySnapshot.docs.map(doc => {
-                return { id: doc.id, ...doc.data() }
-            }))
-        });
-
-    }, []);
-
-    return name;
 }

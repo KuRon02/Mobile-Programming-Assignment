@@ -9,7 +9,16 @@ export default StyleSheet.create({
     },
     place: {
         borderWidth: 1,
-        margin:10,
+        padding:10,
+        marginBottom:10,
+    },
+    text: {
+        fontSize: "20px"
+    },
+
+    textInput: {
         padding:5,
-    }
+        backgroundColor:"#b0a5af",
+        marginBottom:10,
+    },
 })
