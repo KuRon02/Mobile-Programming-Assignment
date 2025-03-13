@@ -15,10 +15,16 @@ export default StyleSheet.create({
     text: {
         fontSize: "20px"
     },
-
     textInput: {
         padding:5,
         backgroundColor:"#b0a5af",
         marginBottom:10,
     },
+    buttonText: {
+        backgroundColor:"#b08fae",
+        borderRadius:15,
+        padding:15,
+        marginBottom:10,
+        textAlign:"center"
+    }
 })

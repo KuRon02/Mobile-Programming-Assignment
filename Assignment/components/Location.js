@@ -12,7 +12,7 @@ export function Locations() {
   return (
     <View style={Styles.container}>
       <Pressable onPress={() => navigation.navigate('AddLocation') }>
-        <Text>Add Location</Text>
+        <Text style={Styles.buttonText}>Add new location</Text>
       </Pressable>
       <FlatList data={locationItems} renderItem={({item}) => Place(item, navigation)}></FlatList>
     </View>
