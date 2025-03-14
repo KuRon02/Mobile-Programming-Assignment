@@ -25,7 +25,7 @@ function Place(locationItem, navigation) {
       <View style={Styles.place}>
         <View style={[Styles.row, {flexDirection: 'row', justifyContent: 'space-between'},]}>
             <Text style={Styles.text}>{locationItem.lName}</Text>
-            <Pressable onPress={() => navigation.navigate('Maps') }>
+            <Pressable onPress={() => navigation.navigate('Maps', {locationName: locationItem.lName}) }>
                 <IconButton size={35} icon={'map-marker'} iconColor={'red'}></IconButton>
             </Pressable>
         </View>

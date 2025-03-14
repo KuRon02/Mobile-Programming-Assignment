@@ -4,7 +4,6 @@ import Constants from "expo-constants";
 export default StyleSheet.create({
     container: {
         flex:1,
-        marginTop: Constants.statusBarHeight+10,
         padding: 30,
     },
     place: {
@@ -13,7 +12,7 @@ export default StyleSheet.create({
         marginBottom:10,
     },
     text: {
-        fontSize: "20px"
+        fontSize: 20,
     },
     textInput: {
         padding:5,
@@ -38,5 +37,11 @@ export default StyleSheet.create({
     },
     starEmpty: {
         icon: 'star-outline',
+    },
+    mapCont: {
+        flex: 1,
+    },
+    map: {
+        flex: 1,
     }
 })
