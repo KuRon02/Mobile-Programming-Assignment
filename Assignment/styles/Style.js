@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import Constants from "expo-constants";
 
+//Basic styles file
 export default StyleSheet.create({
     container: {
         flex:1,

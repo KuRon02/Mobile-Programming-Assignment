@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { Button, TextInput, View } from "react-native";
 import Styles from '../styles/Style.js';
 import { addPlace } from "../firebase/FirestoreController.js";
 import { IconButton } from "react-native-paper";
 
+//Page where you can add new locations to the database
+//User inputs location name, description and amount of stars 0-5 which are then pushed to the database using function addPlace in FirestoreController
 export function AddLocation() {
 
     const [lName, setlName] = useState('');

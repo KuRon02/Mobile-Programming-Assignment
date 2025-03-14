@@ -1,12 +1,15 @@
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { useFireLocations } from '../firebase/FirestoreController';
-import { StyleSheet, Text, View, Button, Switch, Pressable, FlatList } from 'react-native';
+import { Text, View, Pressable, FlatList } from 'react-native';
 import Styles from '../styles/Style.js';
-import { Icon, IconButton } from 'react-native-paper';
+import { IconButton } from 'react-native-paper';
 
+//Main page of the app, shows the list of locations in the database
 export function Locations() {
 
+  //Enable navigation
   const navigation = useNavigation();
+  //Load database information
   const locationItems = useFireLocations();
 
   return (
@@ -19,6 +22,8 @@ export function Locations() {
   );
 }
 
+//Component that shows location information: Name, Description and stars 0-5
+//Map icon navigates to map view and also passes location name as argument. Location name is then used to search location coordinates
 function Place(locationItem, navigation) {
 
     return (
